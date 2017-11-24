@@ -1,6 +1,6 @@
 <%-- 
-    Document   : reset
-    Created on : Nov 22, 2017, 1:34:15 PM
+    Document   : resetNewPassword
+    Created on : Nov 23, 2017, 10:31:09 PM
     Author     : 734972
 --%>
 
@@ -9,16 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reset Password</title>
+        <title>Reset New Password</title>
     </head>
     <body>
-        <h1>Reset Password</h1>
+        <h1>Enter a new password</h1>
         <br>
         <form action="reset" method="post">
-            Email Address: <input type="text" name="email">
+            <input type="password" name="password">
             <br>
             <br>
             <input type="submit" value="Submit">
+            <input type="hidden" name="action" value="newPassword"/>
+            <input type="hidden" name="uuid" value="${uuid}"/>
         </form>
        ${message}
     </body>

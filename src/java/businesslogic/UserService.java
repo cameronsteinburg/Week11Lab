@@ -34,6 +34,10 @@ public class UserService {
      public User getByEmail(String email) {
         return userDB.getByEmail(email);
     }
+     
+     public User getByUUID(String uuid) {
+        return userDB.getByUUID(uuid);
+    }
 
     public int delete(String username) throws Exception {
         User deletedUser = userDB.getUser(username);

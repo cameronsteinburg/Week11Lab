@@ -53,7 +53,7 @@ public class AccountService {
                 contents.put("link", link); 
 
                 try {
-                    WebMailService.sendMail(email, "Password Reset Request", path + "/emailtemplates/resetpassword.html", contents);
+                    WebMailService.sendMail(email, "Password Reset Request", path , contents);
                 } catch (IOException ex) {
                     Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -137,5 +137,20 @@ public class AccountService {
 
         return null;
     }
+    
+    public boolean changePassword(String uuid, String password) {
+        UserDB db = new UserDB();
+        try {
+            User user = db.getByUUID(uuid);
+            user.setPassword(password);
+            user.setUUID(null);
+            UserDB ur = new UserDB ();
+            ur.update(user);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
 
 }

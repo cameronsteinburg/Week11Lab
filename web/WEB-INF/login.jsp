@@ -19,7 +19,7 @@
             <input type="submit" value="Login">
         </form>
         <br>
-        <a href="reset">Password Reset</a>
+        <a href="login?action=resetPassword">Password Reset</a>
         ${errormessage}
     </body>
 </html>
