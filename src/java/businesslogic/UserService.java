@@ -30,6 +30,10 @@ public class UserService {
         user.setLastname(lastname);
         return userDB.update(user);
     }
+    
+     public User getByEmail(String email) {
+        return userDB.getByEmail(email);
+    }
 
     public int delete(String username) throws Exception {
         User deletedUser = userDB.getUser(username);

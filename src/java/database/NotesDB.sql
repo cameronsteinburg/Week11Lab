@@ -17,6 +17,7 @@ CREATE TABLE `User`(
     Firstname VARCHAR(50) NOT NULL,
     Lastname VARCHAR(50) NOT NULL,
     `Role` INT(11) NOT NULL,
+    `UUID` VARCHAR(50),
     PRIMARY KEY (Username),
     KEY `FK_Role_User` (`Role`),
     CONSTRAINT `FK_Role_User` FOREIGN KEY (`Role`) REFERENCES `Role` (`RoleID`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -38,12 +39,13 @@ CREATE TABLE `Note` (
 INSERT INTO `Role` VALUES (1,'admin');
 INSERT INTO `Role` VALUES (2,'regular user');
 
-INSERT INTO `User` VALUES ('admin', 'password', 'cprg352+admin@gmail.com', 1, 'Bob', 'Bobberson', 1);
-INSERT INTO `User` VALUES ('admin2', 'password', 'cprg352+admin2@gmail.com', 0, 'Admin2', 'Admin2', 1);
-INSERT INTO `User` VALUES ('admin3', 'password', 'cprg352+admin3@gmail.com', 1, 'Admin3', 'Admin3', 1);
-INSERT INTO `User` VALUES ('anne', 'password', 'cprg352+anne@gmail.com', 1, 'Anne', 'Annie', 2);
-INSERT INTO `User` VALUES ('barb', 'password', 'cprg352+barb@gmail.com', 0, 'Barb', 'Barker', 2);
-INSERT INTO `User` VALUES ('carl', 'password', 'cprg352+carl@gmail.com', 1, 'Carl', 'Carlson', 2);
+INSERT INTO `User` VALUES ('admin', 'password', 'cprg352+admin@gmail.com', 1, 'Bob', 'Bobberson', 1, null);
+INSERT INTO `User` VALUES ('admin2', 'password', 'cprg352+admin2@gmail.com', 0, 'Admin2', 'Admin2', 1, null);
+INSERT INTO `User` VALUES ('admin3', 'password', 'cprg352+admin3@gmail.com', 1, 'Admin3', 'Admin3', 1, null);
+INSERT INTO `User` VALUES ('anne', 'password', 'cprg352+anne@gmail.com', 1, 'Anne', 'Annie', 2, null);
+INSERT INTO `User` VALUES ('barb', 'password', 'cprg352+barb@gmail.com', 0, 'Barb', 'Barker', 2, null);
+INSERT INTO `User` VALUES ('carl', 'password', 'cprg352+carl@gmail.com', 1, 'Carl', 'Carlson', 2, null);
+INSERT INTO `User` VALUES ('cameron', 'password', 'johnsmith734972@gmail.com', 1, 'Cameron', 'Steinburg', 2, null);
 
 INSERT INTO `Note` (`DateCreated`, `Title`, `Contents`, `Owner`) VALUES (NOW(), 'Sample note 1', 'This is a sample note.\n\nMore text in the sample note.', 'anne');
 INSERT INTO `Note` (`DateCreated`, `Title`, `Contents`, `Owner`) VALUES (NOW(), 'Sample note 2', 'This is a sample note.\n\nMore text in the sample note.', 'anne');

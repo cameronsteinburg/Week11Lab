@@ -18,6 +18,8 @@
             password: <input type="password" name="password"><br>
             <input type="submit" value="Login">
         </form>
+        <br>
+        <a href="reset">Password Reset</a>
         ${errormessage}
     </body>
 </html>

@@ -101,4 +101,19 @@ public class UserDB {
             em.close();
         }
     }
+    
+     public User getByEmail(String email) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        
+        try {
+            User user = em.createNamedQuery("User.findByEmail", User.class).setParameter("email", email).getSingleResult();
+            em.close();
+            return user;
+        } catch (Exception ex) {
+            Logger.getLogger(UserDB.class.getName()).log(Level.SEVERE, "Cannot read users", ex);
+            em.close();
+        }
+        
+        return null;
+    }
 }
