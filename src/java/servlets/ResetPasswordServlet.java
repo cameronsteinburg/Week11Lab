@@ -3,7 +3,6 @@ package servlets;
 import businesslogic.AccountService;
 import businesslogic.UserService;
 import dataaccess.NotesDBException;
-import dataaccess.UserDB;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
